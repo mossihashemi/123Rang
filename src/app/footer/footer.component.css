@@ -1,0 +1,16 @@
+
+
+footer{
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem dotted #e5e5e5;
+    display: block; 
+    position: fixed;
+    height: 120px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
