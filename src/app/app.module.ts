@@ -22,6 +22,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { AuthService } from './auth.service';
+import { AuthGaurdService } from './auth-gaurd.service';
 
 @NgModule({
   declarations: [
@@ -52,18 +53,19 @@ import { AuthService } from './auth.service';
       { path: 'contact', component: ContactComponent },
       { path: 'about', component: AboutComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
-      { path: 'my-orders', component: MyOrdersComponent },
-      { path: 'order-success', component: OrderSuccessComponent },
-      { path: 'check-out', component: CheckOutComponent },
+      { path: 'my-orders', component: MyOrdersComponent, canActivate: [AuthGaurdService] },
+      { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGaurdService] },
+      { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGaurdService] },
 
 
-      { path: 'admin/admin-orders', component: AdminOrdersComponent },
-      { path: 'admin/admin-products', component: AdminProductsComponent },
+      { path: 'admin/admin-orders', component: AdminOrdersComponent, canActivate: [AuthGaurdService] },
+      { path: 'admin/admin-products', component: AdminProductsComponent, canActivate: [AuthGaurdService] },
 
     ])
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGaurdService
   ],
   bootstrap: [AppComponent]
 })
