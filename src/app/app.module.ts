@@ -23,6 +23,7 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { AuthService } from './auth.service';
 import { AuthGaurdService } from './auth-gaurd.service';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { AuthGaurdService } from './auth-gaurd.service';
       { path: 'contact', component: ContactComponent },
       { path: 'about', component: AboutComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
+
       { path: 'my-orders', component: MyOrdersComponent, canActivate: [AuthGaurdService] },
       { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGaurdService] },
       { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGaurdService] },
@@ -65,7 +67,8 @@ import { AuthGaurdService } from './auth-gaurd.service';
   ],
   providers: [
     AuthService,
-    AuthGaurdService
+    AuthGaurdService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
