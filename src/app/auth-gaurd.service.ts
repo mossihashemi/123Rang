@@ -23,8 +23,8 @@ export class AuthGaurdService implements CanActivate {
     return this.auth.$user.map(user => {
       if (user) return true;
 
-      /* here we wanna pass a query parameter that determines the retrun Url, but how do we get this retrun url?
-
+      /* here we wanna pass a query parameter that determines the retrun Url, 
+      but how do we get this retrun url?
       **/
       this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
       return false;
