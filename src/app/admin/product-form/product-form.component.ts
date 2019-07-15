@@ -5,6 +5,7 @@ import { Category } from '../../models/category';
 import { ColorType } from '../../models/colorType';
 import { Wash } from '../../models/whash';
 import { Size } from '../../models/size';
+import { ProductService } from '../../product.service';
 
 @Component({
   selector: 'product-form',
@@ -20,7 +21,9 @@ export class ProductFormComponent implements OnInit {
   washable: Wash[];
   size: Size[];
 
-  constructor(private categoryService: CategoryService) {
+  constructor(
+    private categoryService: CategoryService,
+    private productService: ProductService) {
 
   }
 
@@ -29,6 +32,10 @@ export class ProductFormComponent implements OnInit {
     this.onSelect(this.selectedCategory.id);
   }
 
+  save(product) {
+    console.log(product);
+    this.productService.create(product);
+  }
 
   onSelect(categoryid) {
     this.subCategories = this.categoryService.getSubCategories().filter((item) => item.categoryid == categoryid);
