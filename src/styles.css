@@ -19,4 +19,7 @@ body{
 .mb-10{
     margin-bottom: 10px;
 }
-body { padding-top: 80px; }
+body { 
+    padding-top: 80px; 
+    padding-bottom: 300px;
+}
