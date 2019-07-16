@@ -6,6 +6,7 @@ import { ColorType } from '../../models/colorType';
 import { Wash } from '../../models/whash';
 import { Size } from '../../models/size';
 import { ProductService } from '../../product.service';
+import { Color } from '../../models/color';
 
 @Component({
   selector: 'product-form',
@@ -20,6 +21,7 @@ export class ProductFormComponent implements OnInit {
   colorTypes: ColorType[];
   washable: Wash[];
   size: Size[];
+  color: Color[];
 
   constructor(
     private categoryService: CategoryService,
@@ -42,6 +44,7 @@ export class ProductFormComponent implements OnInit {
     this.colorTypes = this.categoryService.getColorType().filter((item) => item.categoryid == categoryid);
     this.washable = this.categoryService.getWash().filter((item) => item.categoryid == categoryid);
     this.size = this.categoryService.getSize().filter((item) => item.categoryid == categoryid);
+    this.color = this.categoryService.getColor().filter((item) => item.categoryid == categoryid);
 
   }
 }

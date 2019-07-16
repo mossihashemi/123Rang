@@ -9,6 +9,26 @@
     <label for="code" class="float-right">کد</label>
     <input ngModel name="code" id="code" type="number" class="form-control">
   </div>
+  <br>
+  <div class="form-group form-check form-check-inline float-right">
+    <input ngModel name="new" type="checkbox" value="new" id="new">
+    <label class="form-check-label" for="new">
+      محصول جدید
+    </label>
+  </div>
+  <br><br>
+  <div class="form-group">
+    <label for="description" class="float-right">توضیحات </label>
+    <textarea ngModel name="description" class="form-control" id="description" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="discount" class="float-right">تخفیف</label>
+    <div class="input-group">
+      <span class="input-group-addon ">%</span>
+      <input ngModel name="discount" id="discount" type="number" class="form-control" [min]="0">
+    </div>
+  </div>
 
   <div class="form-group">
     <label for="price" class="float-right">قیمت</label>
@@ -64,6 +84,18 @@
     </select>
   </div>
 
+  <div class="form-group">
+    <label for="color" class="float-right">(فام (رنگ</label>
+    <select ngModel name="color" id="color" class="form-control" multiple size="3">
+      <option value="0">
+        -- انتخاب کنید--
+      </option>
+      <option *ngFor="let co of color" value="{{ co.id }}">
+        {{ co.name  }}
+      </option>
+    </select>
+  </div>
+
 
   <div class="form-group">
     <label for="size" class="float-right">حجم/سایز</label>
@@ -89,6 +121,7 @@
     <label for="imageUrl3" class="float-right">عکس سوم</label>
     <input ngModel name="imageUrl3" id="imageUrl3" type="text" class="form-control">
   </div>
+
 
 
 

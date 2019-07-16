@@ -4,6 +4,7 @@ import { Category } from './models/category';
 import { SubCategory } from './models/subCategory';
 import { ColorType } from './models/colorType';
 import { Wash } from './models/whash';
+import { Color } from './models/color';
 
 @Injectable()
 export class CategoryService {
@@ -64,6 +65,26 @@ export class CategoryService {
       new Wash(2, 1, 'یک لیتری'),
       new Wash(2, 1, 'چهار لیتری'),
       new Wash(2, 1, 'دوازده لیتری'),
+    ];
+  }
+
+  getColor() {
+    return [
+      new Color(1, 1, 'سفید'),
+      new Color(2, 1, 'مشکی'),
+      new Color(3, 1, 'سبز'),
+      new Color(4, 1, 'آبی'),
+      new Color(5, 1, 'زرد'),
+      new Color(6, 1, 'سرمه‌ای'),
+      new Color(7, 1, 'قرمز'),
+      new Color(8, 1, 'بنفش'),
+      new Color(9, 1, 'نقره‌ای'),
+      new Color(10, 1, 'یشمی'),
+      new Color(11, 1, 'کرمی'),
+      new Color(12, 1, 'آبی‌نیسانی'),
+      new Color(13, 1, 'نارنجی'),
+      new Color(14, 1, 'یاسی'),
+
     ];
   }
 
