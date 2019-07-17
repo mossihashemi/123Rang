@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation'
 
 import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
@@ -52,12 +53,13 @@ import { ProductService } from './product.service';
   imports: [
     BrowserModule,
     FormsModule,
+    CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '', component: ProductFormComponent },
       { path: 'login', component: LoginComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'about', component: AboutComponent },
@@ -69,8 +71,8 @@ import { ProductService } from './product.service';
 
 
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGaurdService, AdminAuthGuardService] },
-      { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGaurdService, AdminAuthGuardService] },
-      { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGaurdService, AdminAuthGuardService] },
+      { path: 'admin/products', component: AdminProductsComponent },
+      { path: 'admin/products/new', component: ProductFormComponent },
 
     ])
   ],

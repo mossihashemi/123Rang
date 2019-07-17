@@ -38,6 +38,7 @@ export class CategoryService {
       new SubCategory(2, 1, 'روغنی'),
       new SubCategory(3, 1, 'آکرلیک'),
       new SubCategory(4, 1, 'فوری'),
+      new SubCategory(5, 1, 'نیمه پلاستیک'),
       new SubCategory(5, 2, 'برقی'),
       new SubCategory(6, 2, 'غیر برقی'),
     ];

@@ -7,6 +7,7 @@ import { Wash } from '../../models/whash';
 import { Size } from '../../models/size';
 import { ProductService } from '../../product.service';
 import { Color } from '../../models/color';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'product-form',
@@ -25,7 +26,8 @@ export class ProductFormComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private productService: ProductService) {
+    private productService: ProductService,
+    private router: Router) {
 
   }
 
@@ -37,6 +39,8 @@ export class ProductFormComponent implements OnInit {
   save(product) {
     console.log(product);
     this.productService.create(product);
+
+    this.router.navigate(['/admin/products'])
   }
 
   onSelect(categoryid) {

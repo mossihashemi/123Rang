@@ -1,18 +1,6 @@
-/* we have a "Page Not Found" error, the reason is for this, is because this application
- has a single HTML file (index.html) , so when have another url , firebase thinks this is the name 
- of file (fore example here https://rang-13fc3.web.app/login) login.html , but we dont have a file 
- by this name in our directory, so we need to set up a simple rule in firebase and this will tell
- to firebase to redirect any URL to index.html, there our Angular application loads, and our rout 
- is kicks in and take the user to the login page for example */
 {
   "hosting": {
     "public": "dist",
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
     "ignore": [
       "firebase.json",
       "**/.*",
